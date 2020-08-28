@@ -1,0 +1,28 @@
+{
+  "name": "hidden-mapbox",
+  "version": "1.0.0",
+  "description": "Utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okdistribute/hidden-mapbox.git"
+  },
+  "keywords": [
+    "mapbox",
+    "hidden",
+    "print",
+    "image"
+  ],
+  "author": "Karissa McKelvey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okdistribute/hidden-mapbox/issues"
+  },
+  "homepage": "https://github.com/okdistribute/hidden-mapbox#readme",
+  "dependencies": {
+    "mapbox-gl": "^1.12.0"
+  }
+}
