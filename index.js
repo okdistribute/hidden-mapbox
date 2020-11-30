@@ -44,7 +44,7 @@ class Map {
     zoom,
     pixelRatio
   }) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       if (accessToken) mapboxgl.accessToken = accessToken
       this.map.once('error', reject)
       this.map.once('idle', () => {
