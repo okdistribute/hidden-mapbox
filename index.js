@@ -46,6 +46,7 @@ class Map {
   }) {
     return new Promise((resolve) => {
       if (accessToken) mapboxgl.accessToken = accessToken
+      this.map.once('error', reject)
       this.map.once('idle', () => {
         // @ts-ignore
         window.devicePixelRatio = originalPixelRatio
