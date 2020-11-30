@@ -46,6 +46,13 @@ class Map {
   }) {
     return new Promise((resolve) => {
       if (accessToken) mapboxgl.accessToken = accessToken
+      this.map.once('idle', () => {
+        // @ts-ignore
+        window.devicePixelRatio = originalPixelRatio
+        this.map.getCanvas().toBlob((blob) => {
+          resolve(blob)
+        })
+      })
       if (style) this.setStyle(style)
       this.mapDiv.style.width = width + 'px'
       this.mapDiv.style.height = height + 'px'
@@ -54,13 +61,6 @@ class Map {
       window.devicePixelRatio = pixelRatio
       this.map.resize()
       this.map.jumpTo({ center, zoom })
-      this.map.on('idle', () => {
-        // @ts-ignore
-        window.devicePixelRatio = originalPixelRatio
-        this.map.getCanvas().toBlob((blob) => {
-          resolve(blob)
-        })
-      })
     })
   }
 }
